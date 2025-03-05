@@ -20,19 +20,38 @@
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </nav>
-<button class="gradient-btn">Contact Me</button>
+
+<button class="gradient-btn" onclick="sendEmail()">Contact Me</button>
+
+<script>
+    function sendEmail() {
+        var email = "sadhavkawatra12@gmail.com";
+        var subject = "Inquiry from Website";
+        var body = "Hello, I would like to get in touch with you.";
+        var mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailtoLink;
+    }
+</script>
+
 </header>
 <section class="home" id="home">
     <div class="home-content">
         <h1>Hey, It's <span>Sadhav</span></h1>
         <h3>I'm a <span>Web Developer!</span></h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt asperiores quia laboriosam...</p>
+
 
         <div class="social-icons">
-            <a href="#"><i class="bx bxl-github"></i></a>
-            <a href="#"><i class="bx bxl-linkedin-square"></i></a>
-            <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+            <a href="https://github.com/Sadhav28" target="_blank" rel="noopener noreferrer">
+                <i class="bx bxl-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sadhav-kawatra-881232250/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
+                <i class="bx bxl-linkedin-square"></i>
+            </a>
+            <a href="https://www.instagram.com/sadhav_kawatra" target="_blank" rel="noopener noreferrer">
+                <i class="bx bxl-instagram-alt"></i>
+            </a>
         </div>
+        
 
         <div class="btn-group">
             <a href="#" class="btn">Hire</a>
@@ -52,9 +71,9 @@
     </div>
     <div class="about-content">
         <h2>About <span>Me</span></h2>
-        <p>Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eaque excepturi
-        perspiciatis doloremque velit dolorem ad, vero libero fugiat distinctio, quam ullam cupiditate inventore? Porro magnam illo quia. Amet, optio nesciunt.</p>
+        <p>Skilled Web Developer and B.Tech CSE student at Amity University, Noida, with
+            expertise in web development, and Data Structures & Algorithms (DSA). Proficient in
+            C++, HTML, CSS, and JavaScript. Experienced in building responsive websites.</p>
         <a href="#" class="btn">Read More</a>
     </div>
 </section>
@@ -66,21 +85,36 @@
             <div class="service-info">
                 <i class="bx bxl-figma"></i>
                 <h4>DSA</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo modi quos eaque corrupti tenetur, eligendi doloribus, culpa iste autem sed recusandae eius excepturi voluptas esse repudiandae ullam! Inventore, accusantium sed?</p>
+                <p>
+                    Data Structures and Algorithms (DSA) are essential for efficient problem-solving in programming. 
+                    They help organize data and optimize operations, making code faster and more scalable. 
+                    Mastering DSA improves coding skills, prepares for technical interviews, and enhances real-world application development.
+                </p>
+                
             </div>
         </div>
         <div class="service-box">
             <div class="service-info">
                 <i class='bx bx-code' ></i>
-                <h4>Front End Development</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo modi quos eaque corrupti tenetur, eligendi doloribus, culpa iste autem sed recusandae eius excepturi voluptas esse repudiandae ullam! Inventore, accusantium sed?</p>
+                <h4>Front-End Development</h4>
+                <p>
+                    Front-end development focuses on creating visually appealing and user-friendly web interfaces using 
+                    HTML, CSS, and JavaScript. It ensures seamless user experiences by optimizing design, responsiveness, 
+                    and interactivity across devices.
+                </p>
+                
             </div>
         </div>
         <div class="service-box">
             <div class="service-info">
                 <i class='bx bx-code-curly'></i>
-                <h4>Back End Development</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo modi quos eaque corrupti tenetur, eligendi doloribus, culpa iste autem sed recusandae eius excepturi voluptas esse repudiandae ullam! Inventore, accusantium sed?</p>
+                <h4>Back-End Development</h4>
+                <p>
+                    Back-end development powers the functionality of web applications by managing databases, 
+                    server-side logic, and APIs. It ensures secure data processing, seamless communication between 
+                    the front-end and server, and efficient application performance.
+                </p>
+                
             </div>
         </div>
     </div>
@@ -97,8 +131,12 @@
             <img src="weather4.png" alt="">
         </div>
             <h3>Weather App</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus est voluptatibus perspiciatis itaque nihil ut numquam, consequuntur necessitatibus facilis laboriosam in blanditiis maiores amet suscipit. Voluptatem possimus eius atque aspernatur.</p>
-            <div class="btn">Review Project</div>
+            <p>Developed a real-time weather app using HTML, CSS, and JavaScript,
+             Implemented live weather updates based on user input..</p>
+             <a href="https://weatherapp2830.netlify.app/" target="_blank" rel="noopener noreferrer">
+                <div class="btn">Review Project</div>
+              </a>
+              
         </div>
     </div>
 </section>
@@ -123,11 +161,21 @@
             </div>
         </div>
 
-
         <div class="input-group-2">
-            <textarea name="" id="" placeholder="Your Message" cols="30" rows="10"></textarea>
-            <input type="submit" value="Send Message" class="btn">
+            <textarea id="message" placeholder="Your Message" cols="30" rows="10"></textarea>
+            <input type="submit" value="Send Message" class="btn" onclick="sendEmail()">
         </div>
+        
+        <script>
+            function sendEmail() {
+                var message = document.getElementById("message").value;
+                var email = "sadhavkawatra12@gmail.com";
+                var subject = "New Message from Contact Form";
+                var mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+                window.location.href = mailtoLink;
+            }
+        </script>
+        
     </form>
 </section>
 
